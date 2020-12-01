@@ -25,7 +25,7 @@ const intersection_route = require('./Routes/intersection');
 app.use('/buildings', buildings_route);
 app.use('/intersections', intersection_route);
 app.get('/', (req, res) => {
-    res.send('We are home! right away 1');
+    res.send('We are home! right away 2');
 });
 
 app.listen(port);
