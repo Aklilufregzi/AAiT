@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 var path = require('path')
 
 process.env.PWD = process.cwd();
-app.use(express.static(path.join(process.env.PWD, 'public')));
+app.use(express.static(path.join(process.env.PWD, 'uploads')));
 
 mongoose.connect('mongodb+srv://user-1:Ender2622273@cluster0.4zktd.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser : true }, ()=> {
     console.log('Connected to db!'); 
