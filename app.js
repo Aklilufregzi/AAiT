@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
     );
     next();
 })
-app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + '/uploads'));
 
 mongoose.connect('mongodb+srv://user-1:Ender2622273@cluster0.4zktd.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser : true }, ()=> {
     console.log('Connected to db!'); 
