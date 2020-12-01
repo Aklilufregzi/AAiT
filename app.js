@@ -13,7 +13,11 @@ app.use(function(req, res, next) {
     );
     next();
 })
-app.use(express.static(__dirname + '/public'));
+
+var path = require('path')
+
+process.env.PWD = process.cwd();
+app.use(express.static(path.join(process.env.PWD, 'public')));
 
 mongoose.connect('mongodb+srv://user-1:Ender2622273@cluster0.4zktd.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser : true }, ()=> {
     console.log('Connected to db!'); 
@@ -25,7 +29,7 @@ const intersection_route = require('./Routes/intersection');
 app.use('/buildings', buildings_route);
 app.use('/intersections', intersection_route);
 app.get('/', (req, res) => {
-    res.send('We are home! right away 2');
+    res.send('We are home! right away now');
 });
 
 app.listen(port);
