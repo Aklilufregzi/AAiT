@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 let port = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.use(function(req, res, next) {
     );
     next();
 })
+//app.use(express.static(path.join(process.env.PWD, 'uploads')));
 app.use('/uploads',express.static( 'uploads'));
 
 mongoose.connect('mongodb+srv://user-1:Ender2622273@cluster0.4zktd.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser : true }, ()=> {
